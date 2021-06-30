@@ -3,17 +3,27 @@
 
 class Point{
 protected:
-	float x;
-	float y;
+	int x;
+	int y;
 public:
 	Point(){
 		x = 0;
 		y = 0; 
 	};
-	float get_x(){return x;};
-	float get_y(){return y;};
+
+	int get_x(){return x;};
+
+	int get_y(){return y;};
+
+	Point get_point(){
+		Point p;
+		p.x = get_x();
+		p.y = get_y();
+		return p;
+	}
+	
 	//~Point();
-	//float z; //optional
+	//int z; //optional
 };
 
 // class Camera{ //maybe need for future features
@@ -27,10 +37,10 @@ public:
 // 	}; 
 // }
 
-class Robot{
+class Robot:public Point{
 private:
 	Point position;
-	float azimuth; //angle 
+	int azimuth; //angle 
 	//Camera resolution;
 
 public:
@@ -39,7 +49,7 @@ public:
 		azimuth = 0;
 	};
 
-	float get_azimuth(Point position, Point object){
+	int get_azimuth(Point position, Point object){
 		//toDO
 		return azimuth;
 	};
@@ -50,18 +60,25 @@ public:
 		return distance;
 	};
 
-	void rotate(float azimuth){ //rotate robot or without params
+	void rotate(int azimuth){ //rotate robot or without params
 		//toDO if without add get_azimuth()
 	};
 
 
-	void move(float azimuth, float distance){//move robot or without params
+	void move(int azimuth, float distance){//move robot or without params
 		//toDo if without add get_azimuth(), get_distance()
 	};
 
 	void show(){
 		std::cout << "position = ("<< position.get_x() << "," << position.get_y() << ") angle = " << azimuth << std::endl;
 	}
+
+	// Robot get_robot_data(){ toDO Fix
+	// 	Robot r;
+	// 	r.position = get_point();
+	// 	r.azimuth = azimuth;
+	// 	return r;
+	// }
 	//~Robot();
 	
 };
