@@ -5,8 +5,16 @@ class Point{
 protected:
 	float x;
 	float y;
+public:
+	Point(){
+		x = 0;
+		y = 0; 
+	};
+	float get_x(){return x;};
+	float get_y(){return y;};
+	//~Point();
 	//float z; //optional
-}
+};
 
 // class Camera{ //maybe need for future features
 // protected:
@@ -26,14 +34,18 @@ private:
 	//Camera resolution;
 
 public:
-	Robot();
+	Robot(){// toDO constucotor with params
+		Point();
+		azimuth = 0;
+	};
 
-	azimuth get_azimuth(Point position, Point object){
+	float get_azimuth(Point position, Point object){
 		//toDO
 		return azimuth;
 	};
 
 	float get_distance(Point position, Point object){
+		float distance;
 		//toDO
 		return distance;
 	};
@@ -47,6 +59,15 @@ public:
 		//toDo if without add get_azimuth(), get_distance()
 	};
 
-	~Robot();
+	void show(){
+		std::cout << "position = ("<< position.get_x() << "," << position.get_y() << ") angle = " << azimuth << std::endl;
+	}
+	//~Robot();
 	
 };
+
+int main(){
+	Robot r1;
+	r1.show();
+	return 0;
+}
