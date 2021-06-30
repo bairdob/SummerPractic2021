@@ -22,9 +22,9 @@ void publish_robot_data(struct mosquitto *mosq){
 	int x, y, azimuth;
 	int rc;
 
-	x = get_x();
-	y = get_y();
-	azimuth = get_azimuth();
+	x = get_x(); //from lib robot
+	y = get_y();	//from lib robot
+	azimuth = get_azimuth(); //from lib robot
 
 	snprintf(payload, sizeof(payload), "%d", x);
 
