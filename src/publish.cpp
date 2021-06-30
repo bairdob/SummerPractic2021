@@ -17,11 +17,6 @@ void on_publish(struct mosquitto *mosq, void *obj, int mid){
 	printf("Message with mid %d has been published.\n", mid);
 }
 
-int get_temperature(void){
-	sleep(1);
-	return random()%100;
-}
-
 void publish_robot_data(struct mosquitto *mosq){
 	char payload[20];
 	int x, y, azimuth;
