@@ -1,59 +1,57 @@
-#include "opencv/cv.h"
-#include "opencv/highgui.h"
-#include "opencv/cxcore.h"
+#include "opencv2/objdetect/objdetect.hpp"
+#include "opencv2/highgui/highgui.hpp"
+#include "opencv2/imgproc/imgproc.hpp"
 
+#include <iostream>
+#include <stdio.h>
+
+using namespace std;
 using namespace cv;
 
-int main(int argc, char** argv)
+// Function Headers
+void detectAndDisplay(Mat frame);
+
+// Global variables
+string face_cascade_name = "haarcascade_frontalface_alt2.xml";
+CascadeClassifier face_cascade;
+
+// Function main
+int main(void)
 {
-    Mat img = imread("lena.jpg", CV_LOAD_IMAGE_GRAYSCALE);
-    Mat resultImg;
-    cvtColor(img, resultImg, CV_GRAY2BGR);
-
-    // threshold the image with gray value of 100
-   Mat binImg;
-   threshold(img, binImg, 100, 255, THRESH_BINARY);
-
-    // find the contours
-    vector<vector<Point>> contours;
-    vector<Vec4i> hierarchy;
-    findContours(binImg, contours, hierarchy, CV_RETR_CCOMP, CV_CHAIN_APPROX_SIMPLE);
-
-    if(contours.size() <= 0)
-    {
-        printf("no contours found");
-        return 0;
-    }
-    // filter the contours
-    vector<vector<Point>> filteredBlobs;
-    Mat centers = Mat::zeros(0,2,CV_64FC1);
-    for(int i = 0; i < contours.size(); i++)
-    {
-        // calculate circularity
-        double area = contourArea(contours[i]);
-        double arclength = arcLength(contours[i], true);
-        double circularity = 4 * CV_PI * area / (arclength * arclength);
-        if(circularity > 0.8)
-        {
-            filteredBlobs.push_back(contours[i]);
-        
-            //calculate center
-            Moments mu = moments(contours[i], false);
-            Mat centerpoint = Mat(1,2,CV_64FC1);
-            centerpoint.at<double>(i,0) = mu.m10 / mu.m00; // x-coordinate
-            centerpoint.at<double>(i,1) = mu.m01 / mu.m00; // y-coordinate
-            centers.push_back(centerpoint);
-        }
+    // Load the cascade
+    if (!face_cascade.load(face_cascade_name)){
+        printf("--(!)Error on cascade loading\n");
+        return (-1);
     }
 
-    if(filteredBlobs.size() <= 0)
-    {
-        printf("no circular blobs found");
-        return 0;
-    }
-    drawContours(resultImg, filteredBlobs, -1, Scalar(0,0,255), CV_FILLED, 8);
+    // Read the image file
+    Mat frame = imread("lena.jpg");
 
-    imshow("Blobs",resultImg);
+    // Apply the classifier to the frame
+    if (!frame.empty())
+        detectAndDisplay(frame);
     waitKey(0);
     return 0;
+}
+
+// Function detectAndDisplay
+void detectAndDisplay(Mat frame)
+{
+    std::vector<Rect> faces;
+    Mat frame_gray;
+    
+    cvtColor(frame, frame_gray, COLOR_BGR2GRAY);
+    equalizeHist(frame_gray, frame_gray);
+
+    // Detect faces
+    face_cascade.detectMultiScale(frame_gray, faces, 1.1, 2, 0 | CASCADE_SCALE_IMAGE, Size(30, 30));
+
+    for (int ic = 0; ic < faces.size(); ic++) // Iterate through all current elements (detected faces)
+    {
+        Point pt1(faces[ic].x, faces[ic].y); // Display detected faces on main window - live stream from camera
+        Point pt2((faces[ic].x + faces[ic].height), (faces[ic].y + faces[ic].width));
+        rectangle(frame, pt1, pt2, Scalar(0, 255, 0), 2, 8, 0);
+    }
+
+    imshow("original", frame);
 }

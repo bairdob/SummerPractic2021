@@ -1,40 +1,57 @@
-#include <opencv2/opencv.hpp>
+#include "opencv2/objdetect/objdetect.hpp"
+#include "opencv2/highgui/highgui.hpp"
+#include "opencv2/imgproc/imgproc.hpp"
+
+#include <iostream>
+#include <stdio.h>
+
+using namespace std;
 using namespace cv;
 
-int main()
+// Function Headers
+void detectAndDisplay(Mat frame);
+
+// Global variables
+string face_cascade_name = "haarcascade_frontalface_alt2.xml";
+CascadeClassifier face_cascade;
+
+// Function main
+int main(void)
 {
-    //initialize and allocate memory to load the video stream from camera 
-    cv::VideoCapture camera0(2);
-    cv::VideoCapture camera1(1);
-
-    if( !camera0.isOpened() ) return 1;
-    if( !camera1.isOpened() ) return 1;
-
-    while(true) {
-        //grab and retrieve each frames of the video sequentially 
-        cv::Mat3b frame0;
-        camera0 >> frame0;
-        cv::Mat3b frame1;
-        camera1 >> frame1;
-
-        cv::imshow("Video0", frame0);
-        cv::imshow("Video1", frame1);
-
-        //wait for 40 milliseconds
-        int c = waitKey(40);
-
-        //exit the loop if user press "Esc" key  (ASCII value of "Esc" is 27) 
-        if(27 == char(c)) break;
+    // Load the cascade
+    if (!face_cascade.load(face_cascade_name)){
+        printf("--(!)Error on cascade loading\n");
+        return (-1);
     }
 
-    // Get the frame
-Mat save_img; camera0 >> save_img;
-if(save_img.empty())
-{
-  std::cerr << "Something is wrong with the webcam, could not get frame." << std::endl;
-}
-// Save the frame into a file
-imwrite("test1.jpg", save_img); // A JPG FILE IS BEING SAVED
+    // Read the image file
+    Mat frame = imread("lena.jpg");
 
+    // Apply the classifier to the frame
+    if (!frame.empty())
+        detectAndDisplay(frame);
+    waitKey(0);
     return 0;
+}
+
+// Function detectAndDisplay
+void detectAndDisplay(Mat frame)
+{
+    std::vector<Rect> faces;
+    Mat frame_gray;
+    
+    cvtColor(frame, frame_gray, COLOR_BGR2GRAY);
+    equalizeHist(frame_gray, frame_gray);
+
+    // Detect faces
+    face_cascade.detectMultiScale(frame_gray, faces, 1.1, 2, 0 | CASCADE_SCALE_IMAGE, Size(30, 30));
+
+    for (int ic = 0; ic < faces.size(); ic++) // Iterate through all current elements (detected faces)
+    {
+        Point pt1(faces[ic].x, faces[ic].y); // Display detected faces on main window - live stream from camera
+        Point pt2((faces[ic].x + faces[ic].height), (faces[ic].y + faces[ic].width));
+        rectangle(frame, pt1, pt2, Scalar(0, 255, 0), 2, 8, 0);
+    }
+
+    imshow("original", frame);
 }

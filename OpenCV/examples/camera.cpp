@@ -12,7 +12,7 @@ std::cerr << "ERROR: Could not open camera" << std::endl;
 return 1; }
 
 // create a window to display the images from the webcam
-cv::namedWindow("Webcam", CV_WINDOW_AUTOSIZE);
+cv::namedWindow("Webcam", cv::WINDOW_AUTOSIZE);
 
 // this will contain the image from the webcam 
 cv::Mat frame;
