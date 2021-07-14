@@ -1,5 +1,5 @@
-CMakeFiles/opencv_example.dir/mqtt_publish.cpp.o: \
-  /Users/bair/Desktop/SummerPractic2021/example/mqtt_publish.cpp \
+CMakeFiles/opencv_example.dir/position.cpp.o: \
+  /Users/bair/Desktop/SummerPractic2021/example/position.cpp \
   /Library/Developer/CommandLineTools/usr/bin/../include/c++/v1/vector \
   /Library/Developer/CommandLineTools/usr/bin/../include/c++/v1/__config \
   /Library/Developer/CommandLineTools/SDKs/MacOSX11.0.sdk/usr/include/pthread.h \
@@ -271,4 +271,9 @@ CMakeFiles/opencv_example.dir/mqtt_publish.cpp.o: \
   /usr/local/include/opencv4/opencv2/videoio.hpp \
   /usr/local/include/opencv4/opencv2/imgproc/imgproc.hpp \
   /usr/local/include/opencv4/opencv2/imgproc.hpp \
-  /usr/local/include/opencv4/opencv2/./imgproc/segmentation.hpp
+  /usr/local/include/opencv4/opencv2/./imgproc/segmentation.hpp \
+  /Library/Developer/CommandLineTools/usr/bin/../include/c++/v1/fstream \
+  /Library/Developer/CommandLineTools/usr/bin/../include/c++/v1/filesystem \
+  /Library/Developer/CommandLineTools/usr/bin/../include/c++/v1/stack \
+  /Library/Developer/CommandLineTools/usr/bin/../include/c++/v1/deque \
+  /Library/Developer/CommandLineTools/usr/bin/../include/c++/v1/iomanip

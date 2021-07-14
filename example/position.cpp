@@ -8,8 +8,9 @@
 #include <sstream> 
 #include "opencv2/highgui/highgui.hpp"
 #include "opencv2/imgproc/imgproc.hpp"
-//#include <mosquitto.h>
 #include <string>
+#include <fstream>
+#include <sstream>
 
 
 const int MIN_SIZE_CONTOUR = 500;
@@ -44,63 +45,20 @@ std::string getStringFromVPosition(std::vector<cv::Point2f> position){//toDO
 	return str;
 }
 
-void on_connect(struct mosquitto *mosq, void *obj, int reason_code){
-    printf("on_connect: %s\n", mosquitto_connack_string(reason_code));
-    if(reason_code != 0){
-        mosquitto_disconnect(mosq);
+void writeToFile(std::string str){
+    std::ofstream out("/Users/bair/Desktop/SummerPractic2021/example/data.txt", std::ofstream::app);
+
+    if (out.is_open()){
+        out  << str << std::endl;
     }
+
+    out.close();    
 }
-
-void on_publish(struct mosquitto *mosq, void *obj, int mid){
-    printf("Message with mid %d has been published.\n", mid);
-}
-
-void publish_data(struct mosquitto *mosq, std::vector<cv::Point2f> position){
-    // char payload[20];
-    std::string temp;
-    int rc;
-    temp = getStringFromVPosition(position);
-    rc = mosquitto_publish(mosq, NULL, "position", temp.size(), temp.c_str(), 2, false);
-    if(rc != MOSQ_ERR_SUCCESS){
-        fprintf(stderr, "Error publishing: %s\n", mosquitto_strerror(rc));
-    }
-}
-
-
 
 int main(){
 	std::vector<cv::Point2f> test = {{1,2}, {3,4}};
 	// for (auto it:test) std::cout << it << " ";
 	// getStringFromVPosition(test);
-
-	struct mosquitto *mosq;
-    int rc;
-
-    mosquitto_lib_init();
-
-    mosq = mosquitto_new(NULL, true, NULL);
-    if(mosq == NULL){
-        fprintf(stderr, "Error: Out of memory.\n");
-        return 1;
-    }
-
-    mosquitto_connect_callback_set(mosq, on_connect);
-    mosquitto_publish_callback_set(mosq, on_publish);
-
-    rc = mosquitto_connect(mosq, "localhost", 1883, 60);
-    if(rc != MOSQ_ERR_SUCCESS){
-        mosquitto_destroy(mosq);
-        fprintf(stderr, "Error: %s\n", mosquitto_strerror(rc));
-        return 1;
-    }
-
-    rc = mosquitto_loop_start(mosq);
-    if(rc != MOSQ_ERR_SUCCESS){
-        mosquitto_destroy(mosq);
-        fprintf(stderr, "Error: %s\n", mosquitto_strerror(rc));
-        return 1;
-    }
-
-    publish_data(mosq,test);
+    writeToFile(getStringFromVPosition(test));
 	return 0;
 }

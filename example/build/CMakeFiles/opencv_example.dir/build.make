@@ -69,28 +69,28 @@ include CMakeFiles/opencv_example.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/opencv_example.dir/flags.make
 
-CMakeFiles/opencv_example.dir/mqtt_publish.cpp.o: CMakeFiles/opencv_example.dir/flags.make
-CMakeFiles/opencv_example.dir/mqtt_publish.cpp.o: ../mqtt_publish.cpp
-CMakeFiles/opencv_example.dir/mqtt_publish.cpp.o: CMakeFiles/opencv_example.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/bair/Desktop/SummerPractic2021/example/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/opencv_example.dir/mqtt_publish.cpp.o"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/opencv_example.dir/mqtt_publish.cpp.o -MF CMakeFiles/opencv_example.dir/mqtt_publish.cpp.o.d -o CMakeFiles/opencv_example.dir/mqtt_publish.cpp.o -c /Users/bair/Desktop/SummerPractic2021/example/mqtt_publish.cpp
+CMakeFiles/opencv_example.dir/position.cpp.o: CMakeFiles/opencv_example.dir/flags.make
+CMakeFiles/opencv_example.dir/position.cpp.o: ../position.cpp
+CMakeFiles/opencv_example.dir/position.cpp.o: CMakeFiles/opencv_example.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/bair/Desktop/SummerPractic2021/example/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/opencv_example.dir/position.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/opencv_example.dir/position.cpp.o -MF CMakeFiles/opencv_example.dir/position.cpp.o.d -o CMakeFiles/opencv_example.dir/position.cpp.o -c /Users/bair/Desktop/SummerPractic2021/example/position.cpp
 
-CMakeFiles/opencv_example.dir/mqtt_publish.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/opencv_example.dir/mqtt_publish.cpp.i"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/bair/Desktop/SummerPractic2021/example/mqtt_publish.cpp > CMakeFiles/opencv_example.dir/mqtt_publish.cpp.i
+CMakeFiles/opencv_example.dir/position.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/opencv_example.dir/position.cpp.i"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/bair/Desktop/SummerPractic2021/example/position.cpp > CMakeFiles/opencv_example.dir/position.cpp.i
 
-CMakeFiles/opencv_example.dir/mqtt_publish.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/opencv_example.dir/mqtt_publish.cpp.s"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/bair/Desktop/SummerPractic2021/example/mqtt_publish.cpp -o CMakeFiles/opencv_example.dir/mqtt_publish.cpp.s
+CMakeFiles/opencv_example.dir/position.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/opencv_example.dir/position.cpp.s"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/bair/Desktop/SummerPractic2021/example/position.cpp -o CMakeFiles/opencv_example.dir/position.cpp.s
 
 # Object files for target opencv_example
 opencv_example_OBJECTS = \
-"CMakeFiles/opencv_example.dir/mqtt_publish.cpp.o"
+"CMakeFiles/opencv_example.dir/position.cpp.o"
 
 # External object files for target opencv_example
 opencv_example_EXTERNAL_OBJECTS =
 
-opencv_example: CMakeFiles/opencv_example.dir/mqtt_publish.cpp.o
+opencv_example: CMakeFiles/opencv_example.dir/position.cpp.o
 opencv_example: CMakeFiles/opencv_example.dir/build.make
 opencv_example: /usr/local/lib/libopencv_gapi.4.5.3.dylib
 opencv_example: /usr/local/lib/libopencv_highgui.4.5.3.dylib

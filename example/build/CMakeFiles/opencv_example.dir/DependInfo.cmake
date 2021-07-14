@@ -8,7 +8,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/Users/bair/Desktop/SummerPractic2021/example/mqtt_publish.cpp" "CMakeFiles/opencv_example.dir/mqtt_publish.cpp.o" "gcc" "CMakeFiles/opencv_example.dir/mqtt_publish.cpp.o.d"
+  "/Users/bair/Desktop/SummerPractic2021/example/position.cpp" "CMakeFiles/opencv_example.dir/position.cpp.o" "gcc" "CMakeFiles/opencv_example.dir/position.cpp.o.d"
   )
 
 # Targets to which this target links.

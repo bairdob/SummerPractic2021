@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/opencv_example.dir/mqtt_publish.cpp.o"
-  "CMakeFiles/opencv_example.dir/mqtt_publish.cpp.o.d"
+  "CMakeFiles/opencv_example.dir/position.cpp.o"
+  "CMakeFiles/opencv_example.dir/position.cpp.o.d"
   "opencv_example"
   "opencv_example.pdb"
 )

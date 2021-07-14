@@ -129,29 +129,29 @@ opencv_example/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/opencv_example.dir/build.make CMakeFiles/opencv_example.dir/build
 .PHONY : opencv_example/fast
 
-mqtt_publish.o: mqtt_publish.cpp.o
-.PHONY : mqtt_publish.o
+position.o: position.cpp.o
+.PHONY : position.o
 
 # target to build an object file
-mqtt_publish.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/opencv_example.dir/build.make CMakeFiles/opencv_example.dir/mqtt_publish.cpp.o
-.PHONY : mqtt_publish.cpp.o
+position.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/opencv_example.dir/build.make CMakeFiles/opencv_example.dir/position.cpp.o
+.PHONY : position.cpp.o
 
-mqtt_publish.i: mqtt_publish.cpp.i
-.PHONY : mqtt_publish.i
+position.i: position.cpp.i
+.PHONY : position.i
 
 # target to preprocess a source file
-mqtt_publish.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/opencv_example.dir/build.make CMakeFiles/opencv_example.dir/mqtt_publish.cpp.i
-.PHONY : mqtt_publish.cpp.i
+position.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/opencv_example.dir/build.make CMakeFiles/opencv_example.dir/position.cpp.i
+.PHONY : position.cpp.i
 
-mqtt_publish.s: mqtt_publish.cpp.s
-.PHONY : mqtt_publish.s
+position.s: position.cpp.s
+.PHONY : position.s
 
 # target to generate assembly for a file
-mqtt_publish.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/opencv_example.dir/build.make CMakeFiles/opencv_example.dir/mqtt_publish.cpp.s
-.PHONY : mqtt_publish.cpp.s
+position.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/opencv_example.dir/build.make CMakeFiles/opencv_example.dir/position.cpp.s
+.PHONY : position.cpp.s
 
 # Help Target
 help:
@@ -162,9 +162,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... opencv_example"
-	@echo "... mqtt_publish.o"
-	@echo "... mqtt_publish.i"
-	@echo "... mqtt_publish.s"
+	@echo "... position.o"
+	@echo "... position.i"
+	@echo "... position.s"
 .PHONY : help
 
 
