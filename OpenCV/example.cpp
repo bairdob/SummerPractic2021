@@ -1,47 +1,121 @@
-#include "opencv2/highgui.hpp"
-#include "opencv2/imgcodecs.hpp"
-#include "opencv2/imgproc.hpp"
+#include "opencv2/highgui/highgui.hpp"
+#include "opencv2/imgproc/imgproc.hpp"
+#include <opencv2/opencv.hpp> 
 #include <iostream>
-using namespace std;
+#include <cstdlib>
+
 using namespace cv;
-int main(int argc, char** argv)
-{
-    CommandLineParser parser( argc, argv, "{@input | test.jpg | input image}" );
-    Mat src = imread( samples::findFile( parser.get<String>( "@input" ) ), IMREAD_COLOR );
-    if( src.empty() )
-    {
-        return EXIT_FAILURE;
+using namespace std;
+void roi(Mat& img,int x_point,int y_point,int width ,int height);
+
+int main(int argc, char** argv) {
+
+    string image_path; // image path for input image
+
+    if(argc < 2)
+        image_path = "test.jpg";
+    else 
+        image_path = argv[1];
+
+    // declare images 
+    Mat src, gray, blur_image, threshold_output;
+
+    // take input image
+    src = imread(image_path, 1);
+  
+    // convert to grayscale 
+    cvtColor(src, gray, COLOR_BGR2GRAY);
+  
+    // add blurring to the input image
+    blur(gray, blur_image, Size(10, 10));
+  
+    // binary threshold the input image
+    threshold(gray, threshold_output, 200, 255, THRESH_BINARY);
+  
+    // show source image
+    namedWindow("Source", WINDOW_AUTOSIZE);
+    imshow("Source", src);
+  
+    // contours vector  
+    vector< vector<Point> > contours;
+    vector<Vec4i> hierarchy;
+  
+    // find contours for the thresholded image
+    findContours(threshold_output, contours, hierarchy, RETR_TREE, CHAIN_APPROX_SIMPLE, Point(0, 0));
+  
+    // create empty black image
+    Mat drawing = Mat::zeros(threshold_output.size(), CV_8UC3);
+
+    // BoundyBox vector  
+    vector<vector<Point> > contours_poly( contours.size() );
+    vector<Rect> boundRect( contours.size() );
+    vector<Rect> objects;
+
+    for( size_t i = 0; i < contours.size(); i++ ){ 
+        if( contours[i].size() > 500 & contours[i].size() < 2000){ //grab big objects
+            approxPolyDP( contours[i], contours_poly[i], 3, true );
+            boundRect[i] = boundingRect( contours_poly[i] );
+            objects.push_back(boundRect[i]);
+        }
     }
-    vector<Mat> bgr_planes;
-    split( src, bgr_planes );
-    int histSize = 256;
-    float range[] = { 0, 256 }; //the upper boundary is exclusive
-    const float* histRange[] = { range };
-    bool uniform = true, accumulate = false;
-    Mat b_hist, g_hist, r_hist;
-    calcHist( &bgr_planes[0], 1, 0, Mat(), b_hist, 1, &histSize, histRange, uniform, accumulate );
-    calcHist( &bgr_planes[1], 1, 0, Mat(), g_hist, 1, &histSize, histRange, uniform, accumulate );
-    calcHist( &bgr_planes[2], 1, 0, Mat(), r_hist, 1, &histSize, histRange, uniform, accumulate );
-    int hist_w = 512, hist_h = 400;
-    int bin_w = cvRound( (double) hist_w/histSize );
-    Mat histImage( hist_h, hist_w, CV_8UC3, Scalar( 0,0,0) );
-    normalize(b_hist, b_hist, 0, histImage.rows, NORM_MINMAX, -1, Mat() );
-    normalize(g_hist, g_hist, 0, histImage.rows, NORM_MINMAX, -1, Mat() );
-    normalize(r_hist, r_hist, 0, histImage.rows, NORM_MINMAX, -1, Mat() );
-    for( int i = 1; i < histSize; i++ )
-    {
-        line( histImage, Point( bin_w*(i-1), hist_h - cvRound(b_hist.at<float>(i-1)) ),
-              Point( bin_w*(i), hist_h - cvRound(b_hist.at<float>(i)) ),
-              Scalar( 255, 0, 0), 2, 8, 0  );
-        line( histImage, Point( bin_w*(i-1), hist_h - cvRound(g_hist.at<float>(i-1)) ),
-              Point( bin_w*(i), hist_h - cvRound(g_hist.at<float>(i)) ),
-              Scalar( 0, 255, 0), 2, 8, 0  );
-        line( histImage, Point( bin_w*(i-1), hist_h - cvRound(r_hist.at<float>(i-1)) ),
-              Point( bin_w*(i), hist_h - cvRound(r_hist.at<float>(i)) ),
-              Scalar( 0, 0, 255), 2, 8, 0  );
+
+    /// Get the moments
+    vector<Moments> mu(contours.size() );
+    for( size_t i = 0; i < contours.size(); i++ ){ 
+        mu[i] = moments( contours[i] );
     }
-    imshow("Source image", src );
-    imshow("calcHist Demo", histImage );
+
+    ///  Get the mass centers
+    vector<Point2f> mc( contours.size() );
+    for( size_t i = 0; i < contours.size(); i++ ){
+        if(contours[i].size() > 500 & contours[i].size() < 2000){ //grab only detecting objects
+        //add 1e-5 to avoid division by zero
+        mc[i] = Point2f(static_cast<float>(mu[i].m10 / (mu[i].m00 + 1e-5)), static_cast<float>(mu[i].m01 / (mu[i].m00 + 1e-5)) );
+        cout << "mc[" << i << "]=" << mc[i] << endl;
+        }
+    }
+    
+    // // draw contours on the empty black image 
+    // for(int i = 0; i < contours.size(); i++) {
+    //     Scalar color_contours = Scalar(0, 255, 0); 
+    //     Scalar color_box = Scalar(0, 0, 255);
+    //     Scalar color_center = Scalar(0, 255, 255);
+    //     // draw contours
+    //     drawContours(drawing, contours, i, color_contours, 2, 8, vector<Vec4i>(), 0, Point());
+    //     rectangle( drawing, boundRect[i].tl(), boundRect[i].br(), color_box, 2 );
+    //     drawMarker( drawing, mc[i], color_center, 0, 50 , 10);
+    // }
+
+
+    //demonstration start
+
+    // Mat roiImg = src(Rect(boundRect[0].height, boundRect[0].width, boundRect[0].x, boundRect[0].y)); 
+
+    for(int i = 0; i < contours.size(); i++) {
+        Scalar color_contours = Scalar(0, 255, 0); 
+        Scalar color_box = Scalar(0, 0, 255);
+        Scalar color_center = Scalar(0, 255, 255);
+        // draw contours
+        drawContours(src, contours, i, color_contours, 2, 8, vector<Vec4i>(), 0, Point());
+        rectangle( src, boundRect[i].tl(), boundRect[i].br(), color_box, 2 );
+
+    }
+    
+    //roi(src,boundRect[0].height, boundRect[0].width, boundRect[0].x, boundRect[0].y);
+    namedWindow("Compare contouring", WINDOW_AUTOSIZE);
+    imshow("Compare contouring", src);
     waitKey();
-    return EXIT_SUCCESS;
+    destroyAllWindows();
+
+    //equalizeHist(roiImg,roiImg);              // perform equalization of ROI
+    for (auto it : objects) {
+        Mat roi = Mat(src,it);
+        namedWindow("Compare contouring", WINDOW_AUTOSIZE);
+        imshow("Compare contouring", roi);
+        waitKey();
+        destroyAllWindows();
+    }
+    
+    return 0;
+
 }

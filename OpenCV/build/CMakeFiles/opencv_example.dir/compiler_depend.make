@@ -273,12 +273,187 @@ CMakeFiles/opencv_example.dir/example.cpp.o: ../example.cpp \
   /usr/local/include/opencv4/opencv2/imgproc/imgproc.hpp \
   /usr/local/include/opencv4/opencv2/imgproc.hpp \
   /usr/local/include/opencv4/opencv2/imgproc/segmentation.hpp \
-  /Library/Developer/CommandLineTools/usr/include/c++/v1/iostream
+  /usr/local/include/opencv4/opencv2/opencv.hpp \
+  /usr/local/include/opencv4/opencv2/calib3d.hpp \
+  /usr/local/include/opencv4/opencv2/features2d.hpp \
+  /usr/local/include/opencv4/opencv2/flann/miniflann.hpp \
+  /usr/local/include/opencv4/opencv2/flann/defines.h \
+  /usr/local/include/opencv4/opencv2/flann/config.h \
+  /usr/local/include/opencv4/opencv2/core/affine.hpp \
+  /usr/local/include/opencv4/opencv2/dnn.hpp \
+  /usr/local/include/opencv4/opencv2/dnn/dnn.hpp \
+  /usr/local/include/opencv4/opencv2/core/async.hpp \
+  /usr/local/include/opencv4/opencv2/dnn/version.hpp \
+  /usr/local/include/opencv4/opencv2/dnn/dict.hpp \
+  /Library/Developer/CommandLineTools/usr/include/c++/v1/map \
+  /Library/Developer/CommandLineTools/usr/include/c++/v1/__tree \
+  /Library/Developer/CommandLineTools/usr/include/c++/v1/__node_handle \
+  /Library/Developer/CommandLineTools/usr/include/c++/v1/optional \
+  /usr/local/include/opencv4/opencv2/dnn/layer.hpp \
+  /usr/local/include/opencv4/opencv2/dnn/dnn.inl.hpp \
+  /usr/local/include/opencv4/opencv2/dnn/utils/inference_engine.hpp \
+  /usr/local/include/opencv4/opencv2/dnn/dnn.hpp \
+  /usr/local/include/opencv4/opencv2/flann.hpp \
+  /usr/local/include/opencv4/opencv2/flann/flann_base.hpp \
+  /usr/local/include/opencv4/opencv2/flann/general.h \
+  /usr/local/include/opencv4/opencv2/flann/matrix.h \
+  /usr/local/include/opencv4/opencv2/flann/params.h \
+  /usr/local/include/opencv4/opencv2/flann/any.h \
+  /Library/Developer/CommandLineTools/usr/include/c++/v1/iostream \
+  /usr/local/include/opencv4/opencv2/flann/saving.h \
+  /usr/local/include/opencv4/opencv2/flann/nn_index.h \
+  /usr/local/include/opencv4/opencv2/flann/result_set.h \
+  /Library/Developer/CommandLineTools/usr/include/c++/v1/set \
+  /usr/local/include/opencv4/opencv2/flann/all_indices.h \
+  /usr/local/include/opencv4/opencv2/flann/kdtree_index.h \
+  /usr/local/include/opencv4/opencv2/flann/dynamic_bitset.h \
+  /usr/local/include/opencv4/opencv2/flann/dist.h \
+  /usr/local/include/opencv4/opencv2/flann/heap.h \
+  /usr/local/include/opencv4/opencv2/flann/allocator.h \
+  /usr/local/include/opencv4/opencv2/flann/random.h \
+  /usr/local/include/opencv4/opencv2/flann/kdtree_single_index.h \
+  /usr/local/include/opencv4/opencv2/flann/kmeans_index.h \
+  /usr/local/include/opencv4/opencv2/flann/logger.h \
+  /usr/local/include/opencv4/opencv2/flann/composite_index.h \
+  /usr/local/include/opencv4/opencv2/flann/linear_index.h \
+  /usr/local/include/opencv4/opencv2/flann/hierarchical_clustering_index.h \
+  /usr/local/include/opencv4/opencv2/flann/lsh_index.h \
+  /usr/local/include/opencv4/opencv2/flann/lsh_table.h \
+  /Library/Developer/CommandLineTools/usr/include/c++/v1/iomanip \
+  /Library/Developer/CommandLineTools/usr/include/c++/v1/unordered_map \
+  /Library/Developer/CommandLineTools/usr/include/c++/v1/__hash_table \
+  /usr/local/include/opencv4/opencv2/flann/autotuned_index.h \
+  /usr/local/include/opencv4/opencv2/flann/ground_truth.h \
+  /usr/local/include/opencv4/opencv2/flann/index_testing.h \
+  /usr/local/include/opencv4/opencv2/flann/timer.h \
+  /usr/local/include/opencv4/opencv2/flann/sampling.h \
+  /usr/local/include/opencv4/opencv2/ml.hpp \
+  /usr/local/include/opencv4/opencv2/ml/ml.inl.hpp \
+  /usr/local/include/opencv4/opencv2/objdetect.hpp \
+  /usr/local/include/opencv4/opencv2/objdetect/detection_based_tracker.hpp \
+  /usr/local/include/opencv4/opencv2/photo.hpp \
+  /usr/local/include/opencv4/opencv2/stitching.hpp \
+  /usr/local/include/opencv4/opencv2/stitching/warpers.hpp \
+  /usr/local/include/opencv4/opencv2/stitching/detail/warpers.hpp \
+  /usr/local/include/opencv4/opencv2/core/cuda.hpp \
+  /usr/local/include/opencv4/opencv2/core/cuda_types.hpp \
+  /usr/local/include/opencv4/opencv2/core/cuda.inl.hpp \
+  /usr/local/include/opencv4/opencv2/stitching/detail/warpers_inl.hpp \
+  /usr/local/include/opencv4/opencv2/stitching/detail/matchers.hpp \
+  /usr/local/include/opencv4/opencv2/stitching/detail/motion_estimators.hpp \
+  /usr/local/include/opencv4/opencv2/stitching/detail/util.hpp \
+  /Library/Developer/CommandLineTools/usr/include/c++/v1/list \
+  /usr/local/include/opencv4/opencv2/stitching/detail/util_inl.hpp \
+  /Library/Developer/CommandLineTools/usr/include/c++/v1/queue \
+  /Library/Developer/CommandLineTools/usr/include/c++/v1/deque \
+  /usr/local/include/opencv4/opencv2/stitching/detail/camera.hpp \
+  /usr/local/include/opencv4/opencv2/stitching/detail/exposure_compensate.hpp \
+  /usr/local/include/opencv4/opencv2/stitching/detail/seam_finders.hpp \
+  /usr/local/include/opencv4/opencv2/stitching/detail/blenders.hpp \
+  /usr/local/include/opencv4/opencv2/video.hpp \
+  /usr/local/include/opencv4/opencv2/video/tracking.hpp \
+  /usr/local/include/opencv4/opencv2/video/background_segm.hpp
 
+
+/usr/local/include/opencv4/opencv2/stitching/detail/blenders.hpp:
+
+/usr/local/include/opencv4/opencv2/stitching/detail/seam_finders.hpp:
+
+/Library/Developer/CommandLineTools/usr/include/c++/v1/queue:
+
+/usr/local/include/opencv4/opencv2/stitching/detail/util_inl.hpp:
+
+/Library/Developer/CommandLineTools/usr/include/c++/v1/list:
+
+/usr/local/include/opencv4/opencv2/stitching/detail/util.hpp:
+
+/usr/local/include/opencv4/opencv2/stitching/detail/motion_estimators.hpp:
+
+/usr/local/include/opencv4/opencv2/stitching/detail/matchers.hpp:
+
+/usr/local/include/opencv4/opencv2/stitching/detail/warpers_inl.hpp:
+
+/usr/local/include/opencv4/opencv2/core/cuda.inl.hpp:
+
+/usr/local/include/opencv4/opencv2/core/cuda_types.hpp:
+
+/usr/local/include/opencv4/opencv2/stitching/warpers.hpp:
+
+/usr/local/include/opencv4/opencv2/objdetect.hpp:
+
+/usr/local/include/opencv4/opencv2/flann/index_testing.h:
+
+/usr/local/include/opencv4/opencv2/flann/autotuned_index.h:
+
+/Library/Developer/CommandLineTools/usr/include/c++/v1/__hash_table:
+
+/Library/Developer/CommandLineTools/usr/include/c++/v1/unordered_map:
+
+/usr/local/include/opencv4/opencv2/flann/lsh_index.h:
+
+/usr/local/include/opencv4/opencv2/flann/composite_index.h:
+
+/usr/local/include/opencv4/opencv2/flann/kdtree_single_index.h:
+
+/usr/local/include/opencv4/opencv2/flann/random.h:
+
+/usr/local/include/opencv4/opencv2/flann/allocator.h:
+
+/usr/local/include/opencv4/opencv2/flann/heap.h:
+
+/usr/local/include/opencv4/opencv2/flann/dist.h:
+
+/usr/local/include/opencv4/opencv2/flann/kdtree_index.h:
+
+/usr/local/include/opencv4/opencv2/flann/all_indices.h:
+
+/Library/Developer/CommandLineTools/usr/include/c++/v1/set:
+
+/usr/local/include/opencv4/opencv2/flann/result_set.h:
+
+/usr/local/include/opencv4/opencv2/flann/saving.h:
 
 /Library/Developer/CommandLineTools/usr/include/c++/v1/iostream:
 
+/usr/local/include/opencv4/opencv2/flann/matrix.h:
+
+/usr/local/include/opencv4/opencv2/flann/flann_base.hpp:
+
+/usr/local/include/opencv4/opencv2/flann.hpp:
+
+/usr/local/include/opencv4/opencv2/dnn/layer.hpp:
+
+/usr/local/include/opencv4/opencv2/stitching/detail/camera.hpp:
+
+/Library/Developer/CommandLineTools/usr/include/c++/v1/__node_handle:
+
+/Library/Developer/CommandLineTools/usr/include/c++/v1/map:
+
+/usr/local/include/opencv4/opencv2/dnn/dict.hpp:
+
+/usr/local/include/opencv4/opencv2/flann/timer.h:
+
+/usr/local/include/opencv4/opencv2/dnn/version.hpp:
+
+/usr/local/include/opencv4/opencv2/core/async.hpp:
+
+/usr/local/include/opencv4/opencv2/flann/config.h:
+
+/usr/local/include/opencv4/opencv2/features2d.hpp:
+
+/usr/local/include/opencv4/opencv2/ml/ml.inl.hpp:
+
+/usr/local/include/opencv4/opencv2/flann/linear_index.h:
+
+/usr/local/include/opencv4/opencv2/dnn.hpp:
+
+/usr/local/include/opencv4/opencv2/calib3d.hpp:
+
+/usr/local/include/opencv4/opencv2/opencv.hpp:
+
 /usr/local/include/opencv4/opencv2/videoio.hpp:
+
+/Library/Developer/CommandLineTools/usr/include/c++/v1/iomanip:
 
 /usr/local/include/opencv4/opencv2/imgcodecs.hpp:
 
@@ -302,9 +477,17 @@ CMakeFiles/opencv_example.dir/example.cpp.o: ../example.cpp \
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX11.0.sdk/usr/include/sys/_types/_fd_def.h:
 
+/usr/local/include/opencv4/opencv2/core/cuda.hpp:
+
 /Library/Developer/CommandLineTools/SDKs/MacOSX11.0.sdk/usr/include/sys/_types/_suseconds_t.h:
 
+/usr/local/include/opencv4/opencv2/video/tracking.hpp:
+
+/Library/Developer/CommandLineTools/usr/include/c++/v1/__tree:
+
 /Library/Developer/CommandLineTools/SDKs/MacOSX11.0.sdk/usr/include/sys/_types/_useconds_t.h:
+
+/usr/local/include/opencv4/opencv2/flann/miniflann.hpp:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX11.0.sdk/usr/include/sys/_types/_fd_copy.h:
 
@@ -358,7 +541,11 @@ CMakeFiles/opencv_example.dir/example.cpp.o: ../example.cpp \
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX11.0.sdk/usr/include/sys/qos.h:
 
+/usr/local/include/opencv4/opencv2/flann/dynamic_bitset.h:
+
 /Library/Developer/CommandLineTools/SDKs/MacOSX11.0.sdk/usr/include/pthread/qos.h:
+
+/Library/Developer/CommandLineTools/usr/include/c++/v1/optional:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX11.0.sdk/usr/include/sys/_pthread/_pthread_t.h:
 
@@ -370,9 +557,15 @@ CMakeFiles/opencv_example.dir/example.cpp.o: ../example.cpp \
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX11.0.sdk/usr/include/sys/_pthread/_pthread_cond_t.h:
 
+/usr/local/include/opencv4/opencv2/flann/lsh_table.h:
+
 /Library/Developer/CommandLineTools/SDKs/MacOSX11.0.sdk/usr/include/pthread/pthread_impl.h:
 
+/usr/local/include/opencv4/opencv2/flann/nn_index.h:
+
 /Library/Developer/CommandLineTools/SDKs/MacOSX11.0.sdk/usr/include/pthread/sched.h:
+
+/Library/Developer/CommandLineTools/usr/include/c++/v1/deque:
 
 /Library/Developer/CommandLineTools/usr/include/c++/v1/__threading_support:
 
@@ -424,6 +617,8 @@ CMakeFiles/opencv_example.dir/example.cpp.o: ../example.cpp \
 
 /usr/local/include/opencv4/opencv2/core/types.hpp:
 
+/usr/local/include/opencv4/opencv2/video.hpp:
+
 /usr/local/include/opencv4/opencv2/core/saturate.hpp:
 
 /Library/Developer/CommandLineTools/usr/include/c++/v1/ostream:
@@ -470,6 +665,8 @@ CMakeFiles/opencv_example.dir/example.cpp.o: ../example.cpp \
 
 /Library/Developer/CommandLineTools/usr/include/c++/v1/exception:
 
+/usr/local/include/opencv4/opencv2/core/affine.hpp:
+
 /Library/Developer/CommandLineTools/usr/include/c++/v1/stddef.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX11.0.sdk/usr/include/time.h:
@@ -480,11 +677,15 @@ CMakeFiles/opencv_example.dir/example.cpp.o: ../example.cpp \
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX11.0.sdk/usr/include/assert.h:
 
+/usr/local/include/opencv4/opencv2/dnn/dnn.hpp:
+
 /Library/Developer/CommandLineTools/SDKs/MacOSX11.0.sdk/usr/include/sys/_types/_wint_t.h:
 
 /Library/Developer/CommandLineTools/usr/include/c++/v1/cmath:
 
 /Library/Developer/CommandLineTools/usr/include/c++/v1/sstream:
+
+/usr/local/include/opencv4/opencv2/flann/hierarchical_clustering_index.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX11.0.sdk/usr/include/sys/_types/_int16_t.h:
 
@@ -509,6 +710,8 @@ CMakeFiles/opencv_example.dir/example.cpp.o: ../example.cpp \
 /Library/Developer/CommandLineTools/SDKs/MacOSX11.0.sdk/usr/include/_types/_wctype_t.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX11.0.sdk/usr/include/_ctermid.h:
+
+/usr/local/include/opencv4/opencv2/objdetect/detection_based_tracker.hpp:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX11.0.sdk/usr/include/i386/limits.h:
 
@@ -538,6 +741,10 @@ CMakeFiles/opencv_example.dir/example.cpp.o: ../example.cpp \
 
 /Library/Developer/CommandLineTools/usr/lib/clang/12.0.0/include/stdarg.h:
 
+/usr/local/include/opencv4/opencv2/flann/sampling.h:
+
+/usr/local/include/opencv4/opencv2/flann/ground_truth.h:
+
 /usr/local/include/opencv4/opencv2/core/cvdef.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX11.0.sdk/usr/include/sys/_types/_ssize_t.h:
@@ -563,6 +770,8 @@ CMakeFiles/opencv_example.dir/example.cpp.o: ../example.cpp \
 /Library/Developer/CommandLineTools/SDKs/MacOSX11.0.sdk/usr/include/sys/_types/_uintptr_t.h:
 
 /usr/local/include/opencv4/opencv2/core/fast_math.hpp:
+
+/usr/local/include/opencv4/opencv2/flann/general.h:
 
 /Library/Developer/CommandLineTools/usr/include/c++/v1/initializer_list:
 
@@ -606,9 +815,13 @@ CMakeFiles/opencv_example.dir/example.cpp.o: ../example.cpp \
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX11.0.sdk/usr/include/runetype.h:
 
+/usr/local/include/opencv4/opencv2/photo.hpp:
+
 /Library/Developer/CommandLineTools/SDKs/MacOSX11.0.sdk/usr/include/sys/_types/_intptr_t.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX11.0.sdk/usr/include/sys/_types.h:
+
+/usr/local/include/opencv4/opencv2/stitching/detail/warpers.hpp:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX11.0.sdk/usr/include/i386/_types.h:
 
@@ -623,6 +836,8 @@ CMakeFiles/opencv_example.dir/example.cpp.o: ../example.cpp \
 /Library/Developer/CommandLineTools/SDKs/MacOSX11.0.sdk/usr/include/i386/types.h:
 
 /Library/Developer/CommandLineTools/usr/include/c++/v1/type_traits:
+
+/usr/local/include/opencv4/opencv2/flann/defines.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX11.0.sdk/usr/include/sys/_types/_sigaltstack.h:
 
@@ -646,6 +861,8 @@ CMakeFiles/opencv_example.dir/example.cpp.o: ../example.cpp \
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX11.0.sdk/usr/include/i386/signal.h:
 
+/usr/local/include/opencv4/opencv2/stitching/detail/exposure_compensate.hpp:
+
 /Library/Developer/CommandLineTools/SDKs/MacOSX11.0.sdk/usr/include/sys/_pthread/_pthread_once_t.h:
 
 /Library/Developer/CommandLineTools/usr/lib/clang/12.0.0/include/mmintrin.h:
@@ -654,7 +871,11 @@ CMakeFiles/opencv_example.dir/example.cpp.o: ../example.cpp \
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX11.0.sdk/usr/include/_types/_uint16_t.h:
 
+/usr/local/include/opencv4/opencv2/stitching.hpp:
+
 /Library/Developer/CommandLineTools/SDKs/MacOSX11.0.sdk/usr/include/sys/_types/_pid_t.h:
+
+/usr/local/include/opencv4/opencv2/flann/logger.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX11.0.sdk/usr/include/machine/signal.h:
 
@@ -700,6 +921,8 @@ CMakeFiles/opencv_example.dir/example.cpp.o: ../example.cpp \
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX11.0.sdk/usr/include/sys/_types/_u_int8_t.h:
 
+/usr/local/include/opencv4/opencv2/dnn/utils/inference_engine.hpp:
+
 /Library/Developer/CommandLineTools/SDKs/MacOSX11.0.sdk/usr/include/sched.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX11.0.sdk/usr/include/machine/types.h:
@@ -722,9 +945,15 @@ CMakeFiles/opencv_example.dir/example.cpp.o: ../example.cpp \
 
 /Library/Developer/CommandLineTools/usr/include/c++/v1/utility:
 
+/usr/local/include/opencv4/opencv2/flann/params.h:
+
 /usr/local/include/opencv4/opencv2/core/hal/interface.h:
 
+/usr/local/include/opencv4/opencv2/dnn/dnn.inl.hpp:
+
 /usr/local/include/opencv4/opencv2/core/cvstd_wrapper.hpp:
+
+/usr/local/include/opencv4/opencv2/flann/kmeans_index.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX11.0.sdk/usr/include/_types/_intmax_t.h:
 
@@ -745,6 +974,10 @@ CMakeFiles/opencv_example.dir/example.cpp.o: ../example.cpp \
 /Library/Developer/CommandLineTools/SDKs/MacOSX11.0.sdk/usr/include/machine/limits.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX11.0.sdk/usr/include/_wctype.h:
+
+/usr/local/include/opencv4/opencv2/ml.hpp:
+
+/usr/local/include/opencv4/opencv2/flann/any.h:
 
 /usr/local/include/opencv4/opencv2/core/version.hpp:
 
@@ -797,6 +1030,8 @@ CMakeFiles/opencv_example.dir/example.cpp.o: ../example.cpp \
 /Library/Developer/CommandLineTools/usr/include/c++/v1/__nullptr:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX11.0.sdk/usr/include/sys/_types/_dev_t.h:
+
+/usr/local/include/opencv4/opencv2/video/background_segm.hpp:
 
 /Library/Developer/CommandLineTools/usr/include/c++/v1/iterator:
 
