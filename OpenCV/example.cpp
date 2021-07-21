@@ -1,5 +1,5 @@
-#include<opencv2/opencv.hpp>
-#include<iostream>
+#include <opencv2/opencv.hpp>
+#include <iostream>
 #include <mosquitto.h>
 #include <iostream>
 #include <stdio.h>
@@ -12,32 +12,11 @@
 using namespace cv;
 using namespace std;
 
+
 void processFrame(Mat& img, Mat& frame, string &msg);//Drawing an external rectangle
-
-
-void on_connect(struct mosquitto *mosq, void *obj, int reason_code){
-    printf("on_connect: %s\n", mosquitto_connack_string(reason_code));
-    if(reason_code != 0){
-        mosquitto_disconnect(mosq);
-    }
-
-}
-
-void on_publish(struct mosquitto *mosq, void *obj, int mid){
-    printf("Message with mid %d has been published.\n", mid);
-}
-
-
-void publishData(struct mosquitto *mosq, string &str){
-    char payload[20];
-    std::string temp = str;
-    int rc;
-    // temp = getMessage();
-    rc = mosquitto_publish(mosq, NULL, "position", temp.size(), temp.c_str(), 2, false);
-    if(rc != MOSQ_ERR_SUCCESS){
-        fprintf(stderr, "Error publishing: %s\n", mosquitto_strerror(rc));
-    }
-}
+void on_connect(struct mosquitto *mosq, void *obj, int reason_code);
+void on_publish(struct mosquitto *mosq, void *obj, int mid);
+void publishData(struct mosquitto *mosq, string &str);
 
 
 int main(int argc, char** argv){
@@ -95,7 +74,7 @@ int main(int argc, char** argv){
         // imshow("output video", threshold_output);
         processFrame(threshold_output, frame, msg);
         publishData(mosq,msg);
-        imshow("input video", frame);
+        imshow("output video", frame);
 
         char c = waitKey(50);
         if (c == 27){
@@ -195,7 +174,29 @@ void processFrame(Mat & img, Mat &frame, string &msg){
 }
 
     
+void on_connect(struct mosquitto *mosq, void *obj, int reason_code){
+    printf("on_connect: %s\n", mosquitto_connack_string(reason_code));
+    if(reason_code != 0){
+        mosquitto_disconnect(mosq);
+    }
 
+}
+
+void on_publish(struct mosquitto *mosq, void *obj, int mid){
+    printf("Message with mid %d has been published.\n", mid);
+}
+
+
+void publishData(struct mosquitto *mosq, string &str){
+    char payload[20];
+    std::string temp = str;
+    int rc;
+    // temp = getMessage();
+    rc = mosquitto_publish(mosq, NULL, "position", temp.size(), temp.c_str(), 2, false);
+    if(rc != MOSQ_ERR_SUCCESS){
+        fprintf(stderr, "Error publishing: %s\n", mosquitto_strerror(rc));
+    }
+}
 
     
 
