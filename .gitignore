@@ -1,4 +1,3 @@
-
 .DS_Store
-OpenCV/build/
+OpenCV/build/*
 *.o
