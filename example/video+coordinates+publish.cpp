@@ -15,8 +15,7 @@ using namespace std;
 void processFrame(Mat& img, Mat& frame, string &msg);//Drawing an external rectangle
 
 
-void on_connect(struct mosquitto *mosq, void *obj, int reason_code)
-{
+void on_connect(struct mosquitto *mosq, void *obj, int reason_code){
     printf("on_connect: %s\n", mosquitto_connack_string(reason_code));
     if(reason_code != 0){
         mosquitto_disconnect(mosq);
@@ -24,14 +23,12 @@ void on_connect(struct mosquitto *mosq, void *obj, int reason_code)
 
 }
 
-void on_publish(struct mosquitto *mosq, void *obj, int mid)
-{
+void on_publish(struct mosquitto *mosq, void *obj, int mid){
     printf("Message with mid %d has been published.\n", mid);
 }
 
 
-void publishData(struct mosquitto *mosq, string &str)
-{
+void publishData(struct mosquitto *mosq, string &str){
     char payload[20];
     std::string temp = str;
     int rc;
@@ -84,8 +81,8 @@ int main(int argc, char** argv){
     Mat frame;
     Mat gray, blur_image, threshold_output;
     string msg;
-    while (capture.read(frame))
-    {
+
+    while (capture.read(frame)){
          // convert to grayscale 
         cvtColor(frame, gray, COLOR_BGR2GRAY);
       
@@ -109,7 +106,8 @@ int main(int argc, char** argv){
 
     capture.release();
     waitKey(0);
-      mosquitto_lib_cleanup();
+
+    mosquitto_lib_cleanup();
     return 0;
 }
 
@@ -193,9 +191,6 @@ void processFrame(Mat & img, Mat &frame, string &msg){
             msg = str;
         }
     }
-
-  
-
 
 }
 
