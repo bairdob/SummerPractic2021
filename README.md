@@ -18,8 +18,6 @@
 
 - OpenCV
 
-- Mosquitto
-
   
 ## Скриншоты
 
