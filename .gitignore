@@ -2,5 +2,5 @@
 **/OpenCV/build/
 *.o
 build/
-**/build
+**/build/
 /OpenCV/build
