@@ -3,4 +3,4 @@
 *.o
 build/
 **/build/
-/OpenCV/build
+/OpenCV/**/build
